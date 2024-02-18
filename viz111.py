@@ -12,7 +12,7 @@ st.set_page_config(page_title = 'Dashboard',
 import streamlit as st
 
 # Apply external CSS style
-with open('C:/Users/Chaymae/Downloads/style.css', 'r') as f:
+with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 
@@ -115,7 +115,7 @@ with c2:
 #nuclear-warhead-stockpiles-lines
 with c3:
     # Sample data for the line chart
-    df_line_chart = pd.read_csv(r"c:\Users\Chaymae\Desktop\viz\nuclear-warhead-stockpiles-lines (1).csv")
+    df_line_chart = pd.read_csv('nuclear-warhead-stockpiles-lines (1).csv')
 
 # Line chart
     fig_line_chart = px.line(df_line_chart, x='Year', y='Number of nuclear warheads', color='Entity', title='Number of Nuclear Warheads Over Time')
@@ -132,7 +132,7 @@ c4, c5, c6 = st.columns((3, 3, 3))
 #country-position-nuclear-weapons
 with c4:
 
-    uploaded_file = r"c:\Users\Chaymae\Downloads\country-position-nuclear-weapons.csv"
+    uploaded_file = 'country-position-nuclear-weapons.csv'
     df = pd.read_csv(uploaded_file)
 
 
@@ -166,7 +166,7 @@ with c4:
 #number-of-nuclear-weapons-tests
 with c5:
 
-    csv_file_path = r'C:\Users\Chaymae\Downloads\number-of-nuclear-weapons-tests (1)1.csv'
+    csv_file_path = 'number-of-nuclear-weapons-tests (1)1.csv'
     df = pd.read_csv(csv_file_path)
 
     df = df[['Entity', 'Year', 'Number of nuclear weapons tests']]
@@ -205,7 +205,7 @@ with c5:
 
 with c6:
     blue_palette = ['#0000FF', '#1E90FF', '#4682B4', '#87CEEB', '#87CEFA', '#00BFFF', '#87CEEB']
-    df = pd.read_csv(r'C:\Users\Chaymae\Desktop\viz\approve 1.csv')
+    df = pd.read_csv('approve 1.csv')
     columns_of_interest = ['Year', 
                            ' Comprehensive Nuclear-Test-Ban Treaty', 
                            ' Nuclear Non-Proliferation Treaty',
